@@ -1,0 +1,71 @@
+.weather-app {
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'roboto-thin';
+  src: url(../public/fonts/Roboto-Thin.ttf);
+
+}
+.Title-font {
+  font-family: roboto-thin;
+  font-weight:bolder;
+  font-size:50px;
+  font-weight:lighter;
+  color:white;
+}
+.Initials-font {
+  font-family: roboto-thin;
+  position:absolute;
+  font-weight: bolder;
+  margin-left:1080px;
+  color:black;
+  font-size: 25px;
+}
+
+.Clouds {
+  height:1000px;
+  width:2000px;
+}
+
+.Weather-app-header {
+  background-color: #79a3f5;
+  background-image: linear-gradient(to bottom, #79a3f5, white);
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top:0%;
+  left:0%;
+}
+
+.Location-label {
+  font-family:roboto-thin;
+  position:absolute;
+  font-size:25px;
+  color:white;
+  left:30%;   
+  top:20%;
+}
+.onHover:hover{
+  transform: scale(2);
+}
+
+.Location-dropdown {
+  background-color: transparent;
+  display:inline-flexbox;
+  height: 50px;
+  width: 200px;
+  font-family:roboto-thin;
+  color: white;
+  font-size:25px;
+  position:absolute;
+  top:18.3%;
+  left:54%;
+  border-color: transparent;
+  outline:0px;
+}
+
+
+
