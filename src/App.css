@@ -1,11 +1,48 @@
 .weather-app {
   text-align: center;
+  zoom:150%;
 }
 
 @font-face {
   font-family: 'roboto-thin';
   src: url(../public/fonts/Roboto-Thin.ttf);
 
+}
+.Location {
+  font-family: roboto-thin;
+  position:absolute;
+  font-size:100px;
+  color:white;
+  left:35%;   
+  top:20%;
+}
+.Temperature {
+  font-family: roboto-thin;
+  position:absolute;
+  font-size:90px;
+  color:white;
+  left:35% ;  
+  top:35%;
+}
+.Condition {
+  font-family: roboto-thin;
+  position:absolute;
+  font-size:80px;
+  color:white;
+  left:35%;   
+  top:50%;
+}
+.Dropdown{
+  font-family: roboto-thin;
+  font-size:35px;
+  color:white;
+  width:wrap;
+  height:wrap;
+  position:absolute;
+  top:20%;
+  left:54%;
+  border-color: transparent;
+  background-color: transparent;
 }
 .Title-font {
   font-family: roboto-thin;
