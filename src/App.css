@@ -8,24 +8,18 @@
   src: url(../public/fonts/Roboto-Thin.ttf);
 
 }
-.Location {
-  font-family: roboto-thin;
-  position:absolute;
-  font-size:100px;
-  color:white;
-  left:35%;   
-  top:20%;
-}
+
 
 .Textbox{
   font-family: roboto-thin;
-  font-size:35px;
+  font-size:25px;
   color:white;
-  width:230px;
-  height:40px;
+  width:13%;
+  height:4%;
   position:absolute;
-  top:20%;
-  left:54%;
+  border: transparent;
+  top:20.2%;
+  left:53.5%;
   border-color: transparent;
   background-color: transparent;
 }
@@ -40,19 +34,21 @@
 }
 .Search {
   position:absolute;
-  top:19%;
+  top:20%;
   left:67%;
-  width:70px;
-  height: 70px;
+  right:67%;
+  width:35px;
+  height: 35px;
 }
 .Location {
   font-family: roboto-thin;
   color:white;
   position:absolute;
   top:25%;
-  left:37%;
+  left:35%;
+  right:35%;
   width:500px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: thin;
   text-align: center;
 }
@@ -61,35 +57,35 @@
   color:white;
   position:absolute;
   top:37%;
-  left:45%;
-  font-size: 90px;
+  left:49%;
+  font-size: 70px;
   font-weight: thin;
   text-align: center;
 }
 .ConditionText {
   font-family: roboto-thin;
   color:white;
-  font-weight: thin;
+  font-weight: 0px;
   font-size:40px;
   position:absolute;
-  top:65%;
-  left:30%;
-  right:30%;
+  top:70%;
+  left:43%;
+  right:44%;
   text-align: center;
-  height:100px;
-
+  width:300px;
   text-align: center;
   
 }
 .ConditionIcon {
   position:absolute;
   top:53%;
-  left:47%;
+  left:49%;
   text-align: center;
   width:150px;
   height:150px;
-  background:transparent;
+  background-color:transparent;
   border-color: transparent;
+  color: transparent;
 }
 .Weather {
   position:absolute;
@@ -103,30 +99,37 @@
   font-weight:bolder;
   font-size:50px;
   font-weight:lighter;
+  position: absolute;
+  left:43%;
+  text-align: center;
+  top:0%;
   color:white;
 }
 .Initials-font {
   font-family: roboto-thin;
   position:absolute;
   font-weight: bolder;
-  margin-left:1080px;
-  color:black;
-  font-size: 25px;
+  left:90%;
+  color:white;
+  font-size: 10px;
 }
 
 .Clouds {
   height:1000px;
   width:2000px;
+  position: absolute;
+  right: 0%;
+  top: 0%;
 }
 
-.Weather-app-header {
+
+.Background {
   background-color: #79a3f5;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  top:0%;
-  left:0%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
 }
 
 .Location-label {

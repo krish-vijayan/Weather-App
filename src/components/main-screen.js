@@ -7,6 +7,7 @@ import WeatherApi from './weather-api-call';
 function MainScreen() {
     return (
         <>
+            <background className="Background">
             <div className="weather-app">
             <header className="Weather-app-header">
                 <h1 className="Title-font">Weather App</h1>
@@ -16,6 +17,7 @@ function MainScreen() {
                 <h3 className="Initials-font">By: Krish Vijayan</h3>
             
             </div>
+            </background>
         </>
     )
 }
@@ -33,7 +35,7 @@ function InputCity() {
     return ( 
         <>
                 <input type="City" onChange={getData}
-                placeholder="Enter City " className="Textbox"/>
+                placeholder="Enter City" className="Textbox"/>
 
                 <button className="InvisButton" onClick={() => {
                     fetch (`http://api.weatherapi.com/v1/current.json?key=a181a7a9bd3248d481e155948222906&q=${cityName}&aqi=no`)
