@@ -115,11 +115,12 @@
 }
 
 .Clouds {
-  height:1000px;
-  width:2000px;
+  height:600px;
+  width:1000px;
   position: absolute;
-  right: 0%;
-  top: 0%;
+  left: 10%;
+  top:-1%;
+  zoom: 110%;
 }
 
 
