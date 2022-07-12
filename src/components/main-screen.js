@@ -30,14 +30,20 @@ function InputCity() {
     const [ condition, setCondition ] = useState('');
     const [ location, setLocation ]  = useState('');
     const [ comma, setComma ] = useState('');
+    const [ blankCity, setBlankCity ] = useState('');
     const getData = (val) => {setCityName(val.target.value)};
 
+  
     return ( 
         <>
                 <input type="City" onChange={getData}
                 placeholder="Enter City" className="Textbox"/>
 
                 <button className="InvisButton" onClick={() => {
+                    if (!cityName){ setBlankCity("Please Enter a City Name!"); return;}
+
+                    else{
+                    setBlankCity(null);
                     fetch (`http://api.weatherapi.com/v1/current.json?key=a181a7a9bd3248d481e155948222906&q=${cityName}&aqi=no`)
                     .then((res) => res.json())
                     .then((data) => {
@@ -47,16 +53,16 @@ function InputCity() {
                         setLocation(data.location);
                         setComma(",");
                         console.log("API WAS CALLED");
-
-                        if (this.state.hasError){return <h1>something went wrong</h1>}
-                    });
-                }}>
+                    })
+                    .catch(error => console.log(`Hey, the error is ${error}`));
+                }}}>
                     <img className="onHover Search" src="../images/search.png"/>
                 </button>  
                 <h1 className="Location">{location.name}{comma} {location.country}</h1>
                 <h1 className="Temperature">{temp.temp_c}{degree}</h1>
                 <img className="ConditionIcon" src={condition.icon}/>
                 <h1 className="ConditionText">{condition.text}</h1> 
+                <h1 className="Location">{blankCity}</h1>
               
         </> 
     )
