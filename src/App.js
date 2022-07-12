@@ -1,12 +1,12 @@
-import {MainScreen, Locations} from './components/main-screen';
+import {MainScreen, InputCity} from './components/main-screen';
+
 
 
 function App() {
   return (
     <>
     <MainScreen/>
-    <Locations/>
-  
+    <InputCity/>
     </>
     
   );

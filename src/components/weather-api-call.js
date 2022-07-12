@@ -1,26 +1,20 @@
 import React, {useState, useEffect} from 'react';
 
-function KeralaApi(locOrCurr) {
-    const [ location, setLocation ] = useState([]);
-    const [ current, setCurrent ] = useState([]);
-    const [ condition, setCondition] = useState([]);
+function WeatherApi(city) {
+    const [ weather, setWeather ] = useState([]);
 
     useEffect(() => {
-        fetch ('http://api.weatherapi.com/v1/current.json?key=a32de11a20304d02950145028222806%20&q=Kochi&aqi=no')
+        fetch (`http://api.weatherapi.com/v1/current.json?key=a181a7a9bd3248d481e155948222906&q=`+ city +`&aqi=no`)
         .then((res) => res.json())
         .then((data) => {
-            setLocation(data.location);
-            setCurrent(data.current);
-            setCondition(data.current.condition);
+            setWeather(data.current);
             console.log("API WAS CALLED");
         });
     },[]);
 
-    if (locOrCurr == "location") {return location}
-    else if (locOrCurr == "current") {return current}
-    else {return condition}
+   return weather;
 
     
 }
 
-export default KeralaApi;
+export default WeatherApi;

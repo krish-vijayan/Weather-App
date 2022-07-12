@@ -1,6 +1,7 @@
 import '../App.css';
-import { useState, useEffect } from 'react';
-import KeralaApi from './weather-api-call'; 
+import { useState, useContext, createContext } from 'react';
+import WeatherApi from './weather-api-call';
+
 
 
 function MainScreen() {
@@ -19,50 +20,50 @@ function MainScreen() {
     )
 }
 
-function Locations() {
-    
-    const keralaLocation = KeralaApi("location");
-    const keralaCurrent = KeralaApi("current");
-    const condition = KeralaApi();
 
-    const [ value, setValue ] = useState(0);
-    const [ display, setDisplay ] = useState(null);
-    
-    return (
+function InputCity() {
+    const [ cityName, setCityName ] = useState('');
+    const [ temp, setTemp ] = useState('');
+    const [ degree, setDegree] = useState('');
+    const [ condition, setCondition ] = useState('');
+    const [ location, setLocation ]  = useState('');
+    const [ comma, setComma ] = useState('');
+    const getData = (val) => {setCityName(val.target.value)};
+
+    return ( 
         <>
-         <div>
-                <select id="options" className="Dropdown" onChange={(e) => {
-                    const selectedValue = e.target.value;
-                    setValue(selectedValue);
-                    if (value == 'Kerala'){
-                    setDisplay(<>
-                    <h1 className="Location">{keralaLocation.region}, {keralaLocation.country}</h1>
-                    <h1 className="Temperature">{keralaCurrent.temp_c}°C ({keralaCurrent.temp_f}°F)</h1> 
-                    <h1 className="Condition">{condition.text}</h1></>)}
+                <input type="City" onChange={getData}
+                placeholder="Enter City " className="Textbox"/>
 
-                    else{setDisplay(null)}
-                    console.log(value);
-                }} >
-                    <option id="null"></option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="New Jersey">New Jersey</option>
-                    <option value="Toronto">Toronto</option> 
-                </select>
-                {display}
-                
-                
-        </div>    
-        </>
-       
-    );
-}
+                <button className="InvisButton" onClick={() => {
+                    fetch (`http://api.weatherapi.com/v1/current.json?key=a181a7a9bd3248d481e155948222906&q=${cityName}&aqi=no`)
+                    .then((res) => res.json())
+                    .then((data) => {
+                        setTemp(data.current);
+                        setDegree("°C");
+                        setCondition(data.current.condition);
+                        setLocation(data.location);
+                        setComma(",");
+                        console.log("API WAS CALLED");
 
-function DisplayText() {
-    return (<>
-        
-    </>)
+                        if (this.state.hasError){return <h1>something went wrong</h1>}
+                    });
+                }}>
+                    <img className="onHover Search" src="../images/search.png"/>
+                </button>  
+                <h1 className="Location">{location.name}{comma} {location.country}</h1>
+                <h1 className="Temperature">{temp.temp_c}{degree}</h1>
+                <img className="ConditionIcon" src={condition.icon}/>
+                <h1 className="ConditionText">{condition.text}</h1> 
+              
+        </> 
+    )
 }
 
 
-export  {MainScreen, Locations};
+
+
+
+
+
+export  {MainScreen, InputCity};

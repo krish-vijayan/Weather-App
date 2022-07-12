@@ -1,6 +1,6 @@
 .weather-app {
   text-align: center;
-  zoom:150%;
+  
 }
 
 @font-face {
@@ -16,33 +16,87 @@
   left:35%;   
   top:20%;
 }
-.Temperature {
-  font-family: roboto-thin;
-  position:absolute;
-  font-size:90px;
-  color:white;
-  left:35% ;  
-  top:35%;
-}
-.Condition {
-  font-family: roboto-thin;
-  position:absolute;
-  font-size:80px;
-  color:white;
-  left:35%;   
-  top:50%;
-}
-.Dropdown{
+
+.Textbox{
   font-family: roboto-thin;
   font-size:35px;
   color:white;
-  width:wrap;
-  height:wrap;
+  width:230px;
+  height:40px;
   position:absolute;
   top:20%;
   left:54%;
   border-color: transparent;
   background-color: transparent;
+}
+::placeholder {
+    color:white;
+    border:wrap;
+
+}
+.InvisButton { 
+  background-color: transparent;
+  border-color: transparent;
+}
+.Search {
+  position:absolute;
+  top:19%;
+  left:67%;
+  width:70px;
+  height: 70px;
+}
+.Location {
+  font-family: roboto-thin;
+  color:white;
+  position:absolute;
+  top:25%;
+  left:37%;
+  width:500px;
+  font-size: 50px;
+  font-weight: thin;
+  text-align: center;
+}
+.Temperature {
+  font-family: roboto-thin;
+  color:white;
+  position:absolute;
+  top:37%;
+  left:45%;
+  font-size: 90px;
+  font-weight: thin;
+  text-align: center;
+}
+.ConditionText {
+  font-family: roboto-thin;
+  color:white;
+  font-weight: thin;
+  font-size:40px;
+  position:absolute;
+  top:65%;
+  left:30%;
+  right:30%;
+  text-align: center;
+  height:100px;
+
+  text-align: center;
+  
+}
+.ConditionIcon {
+  position:absolute;
+  top:53%;
+  left:47%;
+  text-align: center;
+  width:150px;
+  height:150px;
+  background:transparent;
+  border-color: transparent;
+}
+.Weather {
+  position:absolute;
+  top:49%;
+  left:67%;
+  width:70px;
+  height: 70px;
 }
 .Title-font {
   font-family: roboto-thin;
@@ -67,9 +121,7 @@
 
 .Weather-app-header {
   background-color: #79a3f5;
-  background-image: linear-gradient(to bottom, #79a3f5, white);
-  min-height: 100px;
-  display: flex;
+  display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -86,23 +138,7 @@
   top:20%;
 }
 .onHover:hover{
-  transform: scale(2);
+  transform: scale(1.1);
 }
-
-.Location-dropdown {
-  background-color: transparent;
-  display:inline-flexbox;
-  height: 50px;
-  width: 200px;
-  font-family:roboto-thin;
-  color: white;
-  font-size:25px;
-  position:absolute;
-  top:18.3%;
-  left:54%;
-  border-color: transparent;
-  outline:0px;
-}
-
 
 
