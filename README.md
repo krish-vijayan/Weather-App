@@ -8,3 +8,5 @@ display and be fairly accurate!
 Currently, I have not learned CSS properly and hence the application will look different depending on the 
 resolution size of your screen. Therefore, a temporary fix for this would be to use CRTL +/- to scale the 
 display properly. 
+
+Finally, here is a link to the application: https://krish-vijayan-weather-app.netlify.app/.
