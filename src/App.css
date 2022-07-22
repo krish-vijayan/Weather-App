@@ -116,6 +116,7 @@
 
 .Background {
   background-image: url(https://wallpaperbat.com/img/384741-download-wallpaper-2560x1600-sky-sunset-clouds-widescreen-1610.jpg);
+  background-color: black;
   background-size: cover;
   filter:blur(7px);
   position: absolute;
