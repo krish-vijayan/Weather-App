@@ -9,6 +9,9 @@
 
 }
 
+.Container {
+  width: 10px;
+}
 
 .Textbox{
   font-family: roboto-thin;
@@ -83,9 +86,6 @@
   text-align: center;
   width:150px;
   height:150px;
-  background-color:transparent;
-  border-color: transparent;
-  color: transparent;
 }
 .Weather {
   position:absolute;
@@ -109,23 +109,15 @@
   font-family: roboto-thin;
   position:absolute;
   font-weight: bolder;
-  left:90%;
+  margin-left:90%;
   color:white;
   font-size: 10px;
 }
 
-.Clouds {
-  height:600px;
-  width:1000px;
-  position: absolute;
-  left: 10%;
-  top:0%;
-  zoom: 110%;
-}
-
-
 .Background {
-  background-color: #79a3f5;
+  background-image: url(https://wallpaperbat.com/img/384741-download-wallpaper-2560x1600-sky-sunset-clouds-widescreen-1610.jpg);
+  background-size: cover;
+  filter:blur(7px);
   position: absolute;
   top: 0%;
   left: 0%;
