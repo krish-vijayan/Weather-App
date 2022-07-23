@@ -40,7 +40,7 @@
   position:absolute;
   border: transparent;
   top:20%;
-  left:53.5%;
+  left:54.5%;
   border-color: transparent;
   background-color: transparent;
 }
@@ -113,9 +113,7 @@
 }
 
 .Background {
-  background-image: url(https://wallpaperbat.com/img/384741-download-wallpaper-2560x1600-sky-sunset-clouds-widescreen-1610.jpg);
-  background-color: black;
-  background-size: cover;
+  object-fit: cover;
   filter:blur(7px);
   position: absolute;
   top: 0%;

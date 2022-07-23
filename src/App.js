@@ -1,6 +1,6 @@
 import {MainScreen, InputCity} from './components/main-screen';
 import {Helmet} from "react-helmet";
-
+import clouds from './backgrounds/clouds.mp4';
 
 
 function App() {
@@ -14,7 +14,10 @@ function App() {
 
     </Helmet>
     
-      <background className="Background"/>
+      <div>
+        <video src={clouds} autoPlay loop muted className="Background"/>
+      </div>
+      {/* <div className="Background"/> */}
     <div className="Container">
       <MainScreen/>
       <InputCity/>
