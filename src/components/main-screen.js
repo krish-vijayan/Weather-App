@@ -20,6 +20,7 @@ function InputCity() {
   const [cityName, setCityName] = useState('');
   const [temp, setTemp] = useState('');
   const [degree, setDegree] = useState('');
+  const [fahrenheit, setFarenheit] = useState('');
   const [condition, setCondition] = useState('');
   const [location, setLocation] = useState('');
   const [comma, setComma] = useState('');
@@ -37,6 +38,7 @@ function InputCity() {
       setValidCity('');
       setTemp('');
       setDegree('');
+      setFarenheit('');
       setCondition('');
       setIcon('');
       setLocation('');
@@ -51,6 +53,7 @@ function InputCity() {
           if (res.status !== 200) {
             setTemp('');
             setDegree('');
+            setFarenheit('');
             setCondition('');
             setIcon('');
             setLocation('');
@@ -65,6 +68,7 @@ function InputCity() {
         .then((data) => {
           setTemp(data.current);
           setDegree('°C');
+          setFarenheit('°F');
           setCondition(data.current.condition);
           setLocation(data.location);
           setComma(',');
@@ -95,6 +99,10 @@ function InputCity() {
       <h1 className="Temperature">
         {temp.temp_c}
         {degree}
+      </h1>
+      <h1 className="Temperature2">
+        {' '}
+        {temp.temp_f} {fahrenheit}
       </h1>
       <img className={icon} src={condition.icon} />
       <h1 className="ConditionText">{condition.text}</h1>
