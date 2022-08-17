@@ -1,6 +1,6 @@
-import "../App.css";
-import { useState } from "react";
-import { useOnKeyPress } from "./onKeyPress";
+import '../App.css';
+import { useState } from 'react';
+import { useOnKeyPress } from './onKeyPress';
 
 function MainScreen() {
   return (
@@ -17,63 +17,64 @@ function MainScreen() {
 }
 
 function InputCity() {
-  const [cityName, setCityName] = useState("");
-  const [temp, setTemp] = useState("");
-  const [degree, setDegree] = useState("");
-  const [condition, setCondition] = useState("");
-  const [location, setLocation] = useState("");
-  const [comma, setComma] = useState("");
-  const [blankCity, setBlankCity] = useState("");
-  const [validCity, setValidCity] = useState("");
+  const [cityName, setCityName] = useState('');
+  const [temp, setTemp] = useState('');
+  const [degree, setDegree] = useState('');
+  const [condition, setCondition] = useState('');
+  const [location, setLocation] = useState('');
+  const [comma, setComma] = useState('');
+  const [blankCity, setBlankCity] = useState('');
+  const [validCity, setValidCity] = useState('');
   const [icon, setIcon] = useState(null);
+
   const getData = (val) => {
     setCityName(val.target.value);
   };
 
   const apiHandler = () => {
     if (!cityName) {
-      setBlankCity("Please Enter a City Name!");
-      setValidCity("");
-      setTemp("");
-      setDegree("");
-      setCondition("");
-      setIcon("");
-      setLocation("");
-      setComma("");
+      setBlankCity('Please Enter a City Name!');
+      setValidCity('');
+      setTemp('');
+      setDegree('');
+      setCondition('');
+      setIcon('');
+      setLocation('');
+      setComma('');
       return;
     } else {
-      setBlankCity("");
+      setBlankCity('');
       fetch(
         `https://api.weatherapi.com/v1/current.json?key=a181a7a9bd3248d481e155948222906&q=${cityName}&aqi=no`
       )
         .then((res) => {
           if (res.status !== 200) {
-            setTemp("");
-            setDegree("");
-            setCondition("");
-            setIcon("");
-            setLocation("");
-            setComma("");
-            setValidCity("Please Enter a Valid City Name!");
-            throw new Error("Not 200 Response");
+            setTemp('');
+            setDegree('');
+            setCondition('');
+            setIcon('');
+            setLocation('');
+            setComma('');
+            setValidCity('Please Enter a Valid City Name!');
+            throw new Error('Not 200 Response');
           } else {
-            setValidCity("");
+            setValidCity('');
             return res.json();
           }
         })
         .then((data) => {
           setTemp(data.current);
-          setDegree("°C");
+          setDegree('°C');
           setCondition(data.current.condition);
           setLocation(data.location);
-          setComma(",");
-          setIcon("ConditionIcon");
-          console.log("API WAS CALLED");
+          setComma(',');
+          setIcon('ConditionIcon');
+          console.log('API WAS CALLED');
         })
         .catch((error) => console.log(`Hey, the error is ${error}`));
     }
   };
-  useOnKeyPress(apiHandler, "Enter");
+  useOnKeyPress(apiHandler, 'Enter');
 
   return (
     <>
@@ -97,6 +98,7 @@ function InputCity() {
       </h1>
       <img className={icon} src={condition.icon} />
       <h1 className="ConditionText">{condition.text}</h1>
+      <h1 className="TimeText">{location.localtime}</h1>
       <h1 className="Location">{blankCity}</h1>
       <h1 className="Location">{validCity}</h1>
     </>
