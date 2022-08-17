@@ -154,7 +154,7 @@
     font-family: roboto-thin;
     font-size: 4vw;
     color: white;
-    width: 12vw;
+    width: 19vw;
     position: absolute;
     border: transparent;
     top: 25%;
@@ -165,7 +165,7 @@
   .Search {
     position: absolute;
     top: 25%;
-    left: 77.5%;
+    left: 87%;
     width: 6vw;
     height: 6vw;
   }
