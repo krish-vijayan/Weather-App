@@ -8,7 +8,7 @@ function MainScreen() {
       <div className="weather-app">
         <header className="Weather-app-header">
           <h1 className="Title-font">Weather App</h1>
-          <label className="Location-label">Krish, what's the weather in</label>
+          <label className="Location-label">What's the weather in</label>
         </header>
         <h3 className="Initials-font">By: Krish Vijayan</h3>
       </div>
